@@ -49,14 +49,13 @@ pipeline {
             mail to: 'anojroshan23@outlook.com',
                  subject: "SUCCESS: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
                  body: "Build ${env.BUILD_NUMBER} of ${env.JOB_NAME} was successful.",
-                 attachLog: true
+                 
         }
         failure {
             mail to: 'anojroshan23@outlook.com',
                  subject: "FAILURE: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
                  body: "Build ${env.BUILD_NUMBER} of ${env.JOB_NAME} failed. Check Jenkins for details.",
-                 attachLog: true
-        }
+                 
         always {
             echo 'Pipeline completed.'
         }
