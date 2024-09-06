@@ -1,62 +1,62 @@
 pipeline {
     agent any
-
     stages {
         stage('Build') {
             steps {
-                echo 'Building the code...'
-                // Tool: Maven
+                echo 'Building...'
+                // Add build steps here
             }
         }
-        
         stage('Unit and Integration Tests') {
             steps {
-                echo 'Running unit tests...'
-                echo 'Running integration tests...'
+                echo 'Running Unit and Integration Tests...'
+                // Add test steps here
             }
         }
-        
         stage('Code Analysis') {
             steps {
-                echo 'Running code analysis...'
+                echo 'Analyzing Code...'
+                // Add code analysis steps here
             }
         }
-        
         stage('Security Scan') {
             steps {
-                echo 'Performing security scan...'
+                echo 'Performing Security Scan...'
+                // Add security scan steps here
             }
         }
-        
         stage('Deploy to Staging') {
             steps {
-                echo 'Deploying to staging server...'
+                echo 'Deploying to Staging...'
+                // Add deployment steps here
             }
         }
-        
         stage('Integration Tests on Staging') {
             steps {
-                echo 'Running integration tests on staging...'
+                echo 'Running Integration Tests on Staging...'
+                // Add integration test steps here
             }
         }
-        
         stage('Deploy to Production') {
             steps {
-                echo 'Deploying to production server...'
+                echo 'Deploying to Production...'
+                // Add production deployment steps here
             }
         }
     }
-    
     post {
         success {
-            mail to: "sulaianoj232001@gmail.com",
-                subject: "Build Status Email",
-                body: "Build was successfull!"
+            mail to: 'sulaianoj232001@gmail.com',
+                 subject: "SUCCESS: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+                 body: "Build ${env.BUILD_NUMBER} of ${env.JOB_NAME} was successful."
         }
         failure {
-            mail to: "sulaianoj232001@gmail.com",
-                subject: "Build Status Email",
-                body: "Build was Failure!"
+            mail to: 'sulaianoj232001@gmail.com',
+                 subject: "FAILURE: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+                 body: "Build ${env.BUILD_NUMBER} of ${env.JOB_NAME} failed. Check Jenkins for details."
+        }
+        always {
+            echo 'Pipeline completed.'
         }
     }
 }
