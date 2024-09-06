@@ -47,7 +47,7 @@ pipeline {
     post {
         success {
             emailext(
-                recipients: 'sulaianoj232001@gmail.com',
+                replyTo: 'sulaianoj232001@gmail.com',
                 subject: "SUCCESS: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
                 body: "Build ${env.BUILD_NUMBER} of ${env.JOB_NAME} was successful.",
                 attachLog: true
@@ -55,7 +55,7 @@ pipeline {
         }
         failure {
             emailext(
-                recipients: 'sulaianoj232001@gmail.com',
+                replyTo: 'sulaianoj232001@gmail.com',
                 subject: "FAILURE: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
                 body: "Build ${env.BUILD_NUMBER} of ${env.JOB_NAME} failed. Check Jenkins for details.",
                 attachLog: true
