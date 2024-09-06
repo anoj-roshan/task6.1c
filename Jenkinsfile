@@ -67,4 +67,3 @@ post {
             echo 'Pipeline completed.'
         }
     }
-}
