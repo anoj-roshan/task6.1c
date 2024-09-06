@@ -4,43 +4,43 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                // Add build steps here
+               
             }
         }
         stage('Unit and Integration Tests') {
             steps {
                 echo 'Running Unit and Integration Tests...'
-                // Add test steps here
+                
             }
         }
         stage('Code Analysis') {
             steps {
                 echo 'Analyzing Code...'
-                // Add code analysis steps here
+               
             }
         }
         stage('Security Scan') {
             steps {
                 echo 'Performing Security Scan...'
-                // Add security scan steps here
+                
             }
         }
         stage('Deploy to Staging') {
             steps {
                 echo 'Deploying to Staging...'
-                // Add deployment steps here
+                
             }
         }
         stage('Integration Tests on Staging') {
             steps {
                 echo 'Running Integration Tests on Staging...'
-                // Add integration test steps here
+                
             }
         }
         stage('Deploy to Production') {
             steps {
                 echo 'Deploying to Production...'
-                // Add production deployment steps here
+                
             }
         }
     }
