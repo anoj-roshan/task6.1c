@@ -61,9 +61,9 @@ post {
                         to: 'sulaianoj232001@gmail.com'
                     )
                 }
-
-        }
-        always {
+                 always {
             echo 'Pipeline completed.'
+        }
+
         }
     }
